@@ -2,7 +2,8 @@ type: charm
 
 parts:
   charm:
-    source: src/
+    source: .
+    source-subdir: src/
     plugin: reactive
     build-snaps:
       - charm
@@ -11,6 +12,7 @@ parts:
       - git
       - python3-dev
     build-environment:
+      - PIP_CONSTRAINT: $CRAFT_PART_BUILD_WORK/constraints.txt
       - CHARM_INTERFACES_DIR: /root/project/interfaces/
       - CHARM_LAYERS_DIR: /root/project/layers/
 
