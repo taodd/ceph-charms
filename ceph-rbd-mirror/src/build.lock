@@ -86,12 +86,6 @@
     },
     {
       "type": "python_module",
-      "package": "setuptools_scm",
-      "vcs": null,
-      "version": "6.4.2"
-    },
-    {
-      "type": "python_module",
       "package": "MarkupSafe",
       "vcs": null,
       "version": "2.1.5"
