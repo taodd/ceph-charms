@@ -9,6 +9,11 @@ smoke_bundles:
 dev_bundles:
   - jammy-yoga
 
+target_deploy_status:
+  mysql:
+    workload-status: idle
+    workload-status-message: 'Primary'
+
 tests:
   - zaza.charm_tests.lifecycle.refresh.CharmRefreshAll
   - tests.target.CephLowLevelTest
