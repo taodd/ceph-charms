@@ -1,6 +1,6 @@
 variables:
-  openstack-origin: &openstack-origin cloud:focal-yoga
-  series: &series focal
+  openstack-origin: &openstack-origin cloud:jammy-yoga
+  series: &series jammy
 
 series: *series
 
