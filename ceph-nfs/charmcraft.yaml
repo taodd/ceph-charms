@@ -15,8 +15,8 @@ parts:
       apt install -y ca-certificates
       update-ca-certificates
 
-base: ubuntu@20.04
-build-base: ubuntu@20.04
+base: ubuntu@22.04
+build-base: ubuntu@22.04
 platforms:
   amd64:
     build-on: amd64
