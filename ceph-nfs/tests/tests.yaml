@@ -1,10 +1,10 @@
 charm_name: ceph-nfs
 gate_bundles:
-  - jammy-yoga
+  - jammy-zed
 smoke_bundles:
-  - jammy-yoga
+  - jammy-zed
 dev_bundles:
-  - jammy-yoga
+  - jammy-zed
 configure: []
 tests:
   - zaza.charm_tests.lifecycle.refresh.CharmRefreshAll

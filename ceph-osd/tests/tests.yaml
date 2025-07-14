@@ -1,13 +1,13 @@
 charm_name: ceph-osd
 
 gate_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 smoke_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 dev_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 tests:
   - zaza.charm_tests.lifecycle.refresh.CharmRefreshAll

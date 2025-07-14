@@ -1,10 +1,10 @@
 charm_name: ceph-dasboard
 gate_bundles:
-  - jammy-yoga
+  - jammy-zed
 smoke_bundles:
-  - jammy-yoga
+  - jammy-zed
 dev_bundles:
-  - jammy-yoga
+  - jammy-zed
 configure:
   - zaza.openstack.charm_tests.vault.setup.auto_initialize_no_validation
   - tests.target.check_dashboard_cert

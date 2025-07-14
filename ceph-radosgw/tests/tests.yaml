@@ -1,13 +1,13 @@
 charm_name: ceph-radosgw
 
 gate_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 smoke_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 dev_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 target_deploy_status:
   vault:

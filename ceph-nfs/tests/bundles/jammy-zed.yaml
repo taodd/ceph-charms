@@ -1,5 +1,5 @@
 options:
-  source: &source cloud:jammy-yoga
+  source: &source cloud:jammy-zed
 
 machines:
   '0':

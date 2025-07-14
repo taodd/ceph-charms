@@ -1,13 +1,13 @@
 charm_name: ceph-proxy
 
 gate_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 smoke_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 dev_bundles:
-  - jammy-yoga
+  - jammy-zed
 
 configure:
   - tests.target.setup_ceph_proxy
