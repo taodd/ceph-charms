@@ -59,7 +59,7 @@ applications:
       - '2'
   hacluster:
     charm: ch:hacluster
-    channel: 2.0.3/edge
+    channel: latest/edge
     options:
       cluster_count: 2
 
