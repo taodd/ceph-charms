@@ -49,7 +49,7 @@ class CephISCSIGatewayTest(test_utils.BaseCharmTest):
 
     def check_iscsi_module(self):
         out = zaza.model.run_on_unit('ceph-iscsi/0', 'sudo modprobe iscsi_tcp')
-        if int(out.get('Code', 1)) != 0:
+        if out.get('Code', 1) != 0:
             raise unittest.SkipTest('iscsi module not present')
 
     def get_client_initiatorname(self, unit):

@@ -47,7 +47,7 @@ applications:
     num_units: 1
     channel: 8.0/stable
     to:
-      - '6'
+      - '7'
 
   rabbitmq-server:
     charm: ch:rabbitmq-server
@@ -56,7 +56,7 @@ applications:
     options:
       min-cluster-size: 1
     to:
-      - '0'
+      - '6'
 
   cinder:
     charm: ch:cinder
@@ -65,7 +65,7 @@ applications:
     options:
       block-device: 'None'
     to:
-      - '2'
+      - '6'
 
   keystone:
     charm: ch:keystone
