@@ -22,7 +22,7 @@ applications:
     channel: quincy/edge
     num_units: 2
     options:
-      source: *source
+      source: distro
     to:
       - '6'
       - '7'
