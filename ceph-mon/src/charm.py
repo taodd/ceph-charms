@@ -198,6 +198,9 @@ class CephMonCharm(ops_openstack.core.OSBaseCharm):
             event, self.framework.model
         )
 
+    def on_reset_osd_count_report(self, _event):
+        hooks.update_host_osd_count_report(reset=True)
+
     def __init__(self, *args):
         super().__init__(*args)
         self._stored.is_started = True
@@ -237,6 +240,8 @@ class CephMonCharm(ops_openstack.core.OSBaseCharm):
                              ops_actions.list_entities.list_entities)
         self._observe_action(self.on.rotate_key_action,
                              self.on_rotate_key_action)
+        self._observe_action(self.on.reset_osd_count_report_action,
+                             self.on_reset_osd_count_report)
 
         fw.observe(self.on.install, self.on_install)
         fw.observe(self.on.config_changed, self.on_config)
