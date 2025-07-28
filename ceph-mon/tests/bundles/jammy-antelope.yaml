@@ -1,7 +1,7 @@
 series: &series jammy
 
 variables:
-  openstack-origin: &openstack-origin cloud:jammy-zed
+  openstack-origin: &openstack-origin cloud:jammy-antelope
 
 machines:
   '0':

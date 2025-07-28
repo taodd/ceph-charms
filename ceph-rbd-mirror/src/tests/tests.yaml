@@ -1,13 +1,13 @@
 charm_name: ceph-rbd-mirror
 
 gate_bundles:
-  - jammy-zed
+  - jammy-antelope
 
 smoke_bundles:
-  - jammy-zed
+  - jammy-antelope
 
 dev_bundles:
-  - jammy-zed
+  - jammy-antelope
 
 configure:
   - tests.target.setup_rbd_mirror
