@@ -16,7 +16,7 @@ parts:
       - CHARM_INTERFACES_DIR: /root/project/interfaces/
       - CHARM_LAYERS_DIR: /root/project/layers/
 
-base: ubuntu@20.04
+base: ubuntu@22.04
 platforms:
   amd64:
     build-on: amd64

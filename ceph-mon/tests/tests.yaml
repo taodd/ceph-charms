@@ -1,13 +1,18 @@
 charm_name: ceph-mon
 
 gate_bundles:
-  - focal-yoga
+  - jammy-antelope
 
 smoke_bundles:
-  - focal-yoga
+  - jammy-antelope
 
 dev_bundles:
-  - focal-yoga
+  - jammy-antelope
+
+target_deploy_status:
+  mysql:
+    workload-status: idle
+    workload-status-message: 'Primary'
 
 tests:
   - zaza.charm_tests.lifecycle.refresh.CharmRefreshAll

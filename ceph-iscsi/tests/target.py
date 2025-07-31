@@ -17,6 +17,7 @@
 
 import logging
 import tempfile
+import unittest
 
 import zaza
 import zaza.model
@@ -45,6 +46,11 @@ class CephISCSIGatewayTest(test_utils.BaseCharmTest):
     EC_PROFILE_NAME = 'zaza_iscsi'
     EC_DATA_POOL = 'zaza_ec_data_pool'
     EC_METADATA_POOL = 'zaza_ec_metadata_pool'
+
+    def check_iscsi_module(self):
+        out = zaza.model.run_on_unit('ceph-iscsi/0', 'sudo modprobe iscsi_tcp')
+        if out.get('Code', 1) != 0:
+            raise unittest.SkipTest('iscsi module not present')
 
     def get_client_initiatorname(self, unit):
         """Return the initiatorname for the given unit.
@@ -272,6 +278,7 @@ class CephISCSIGatewayTest(test_utils.BaseCharmTest):
 
     def test_create_and_mount_volume(self):
         """Test creating a target and mounting it on a client."""
+        self.check_iscsi_module()
         self.create_data_pool()
         ctxt = self.get_base_ctxt()
         client_entity_id = ctxt['client_entity_ids'][0]
@@ -288,6 +295,7 @@ class CephISCSIGatewayTest(test_utils.BaseCharmTest):
 
     def test_create_and_mount_ec_backed_volume(self):
         """Test creating an EC backed target and mounting it on a client."""
+        self.check_iscsi_module()
         self.create_ec_data_pool()
         ctxt = self.get_base_ctxt()
         client_entity_id = ctxt['client_entity_ids'][1]
@@ -305,6 +313,7 @@ class CephISCSIGatewayTest(test_utils.BaseCharmTest):
 
     def test_create_and_mount_volume_default_pool(self):
         """Test creating a target and mounting it on a client."""
+        self.check_iscsi_module()
         self.create_data_pool()
         ctxt = self.get_base_ctxt()
         client_entity_id = ctxt['client_entity_ids'][2]

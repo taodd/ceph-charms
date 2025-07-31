@@ -1,5 +1,5 @@
 options:
-  source: &source cloud:focal-yoga
+  source: &source cloud:jammy-antelope
 
 machines:
   '0':
@@ -15,14 +15,14 @@ machines:
   '7':
 
 local_overlay_enabled: False
-series: focal
+series: jammy
 applications:
   ceph-nfs:
     charm: ch:ceph-nfs
     channel: quincy/edge
     num_units: 2
     options:
-      source: *source
+      source: distro
     to:
       - '6'
       - '7'
@@ -59,7 +59,7 @@ applications:
       - '2'
   hacluster:
     charm: ch:hacluster
-    channel: 2.0.3/edge
+    channel: latest/edge
     options:
       cluster_count: 2
 

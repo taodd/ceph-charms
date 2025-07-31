@@ -1,8 +1,8 @@
 local_overlay_enabled: False
-series: focal
+series: jammy
 variables:
-  openstack-origin: &openstack-origin cloud:focal-yoga
-  source: &source cloud:focal-yoga
+  openstack-origin: &openstack-origin distro
+  source: &source distro
 
 machines:
   '0':
